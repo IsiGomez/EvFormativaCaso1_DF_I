@@ -11,8 +11,6 @@ public class ProductoRepository {
 
     private List<Producto> listaProductos = new ArrayList<>();
 
-
-
     public List<Producto> listarProductos(){
         return listaProductos;
     }
