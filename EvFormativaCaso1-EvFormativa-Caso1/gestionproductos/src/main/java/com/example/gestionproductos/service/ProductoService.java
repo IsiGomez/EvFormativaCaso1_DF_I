@@ -17,8 +17,8 @@ public class ProductoService {
         return productoRepository.listarProductos();
     }
 
-    public Producto saveProducto(Producto prod){
-        return productoRepository.agregarProducto(prod);
+    public void saveProducto(Producto prod){
+        productoRepository.agregarProducto(prod);
     }
 
     public Boolean deleteProducto(String name){
