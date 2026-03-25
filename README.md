@@ -21,3 +21,14 @@ Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión 
 | **POST** | `/api/v1/tareas` | Agrega una nueva tarea al sistema. 
 | **PATCH** | `/api/v1/tareas/{id}` | Marca una tarea específica como completada. 
 | **DELETE** | `/api/v1/tareas/{id}` | Elimina una tarea por su ID. 
+
+## 🧪 Ejemplo de Petición (JSON)
+
+Para registrar una tarea mediante el método **POST**, el cuerpo de la solicitud debe seguir este formato:
+
+```json
+{
+  "id": 1,
+  "descripcion": "Hacer la cama",
+  "terminada": false
+}
