@@ -2,10 +2,10 @@ package com.example.gestionproductos.controller;
 
 import com.example.gestionproductos.model.Producto;
 import com.example.gestionproductos.service.ProductoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> agregarProducto(@Validated @RequestBody Producto prod){
+    public ResponseEntity<String> agregarProducto(@Valid @RequestBody Producto prod){
         productoService.saveProducto(prod);
         return ResponseEntity.status(HttpStatus.OK).body("Producto recibido y agregado: " + prod.getNombre());
     }
