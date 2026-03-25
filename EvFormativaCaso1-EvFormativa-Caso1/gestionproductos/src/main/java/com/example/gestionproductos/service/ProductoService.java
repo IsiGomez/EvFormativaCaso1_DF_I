@@ -21,7 +21,7 @@ public class ProductoService {
         return productoRepository.agregarProducto(prod);
     }
 
-    public String deleteProducto(String name){
+    public Boolean deleteProducto(String name){
         return productoRepository.eliminarProducto(name);
     }
 

@@ -22,14 +22,14 @@ public class ProductoRepository {
         return prod;
     }
 
-    public String eliminarProducto(String nombre){
+    public Boolean eliminarProducto(String nombre){
         for (Producto p : listaProductos){
             if (p.getNombre().equals(nombre)){
                 listaProductos.remove(p);
-                return "Producto borrado correctamente";
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
 }

@@ -25,13 +25,14 @@ public class ProductoController {
     @PostMapping
     public ResponseEntity<String> agregarProducto(@Validated @RequestBody Producto prod){
         productoService.saveProducto(prod);
-        return ResponseEntity.ok("Producto recibido y agregado: " + prod.getNombre());
+        return ResponseEntity.status(HttpStatus.OK).body("Producto recibido y agregado: " + prod.getNombre());
     }
 
     @DeleteMapping("/{name}")
     public ResponseEntity<String> eliminarProducto(@PathVariable String name){
-        if (productoService.deleteProducto(name) != null){
-            return ResponseEntity.ok("Producto borrado correctamente");
+        boolean verificacion = productoService.deleteProducto(name);
+        if (verificacion){
+            return ResponseEntity.status(HttpStatus.OK).body("Producto borrado correctamente");
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: El producto: " + name + " no existe.");
         }
