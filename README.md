@@ -1,10 +1,10 @@
-# 📝 Sistema de Gestión de Tareas Pendientes (API REST)
+# 📚 Sistema de Gestión de Productos (API REST)
 
-Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión de tareas diarias. Permite realizar operaciones CRUD básicas (Crear, Listar, Eliminar) y manejar el estado de las mismas, siguiendo los estándares de la arquitectura CSR (Controller-Service-Repository).
+Este proyecto es una API REST desarrollada con **Spring Boot** diseñada para administrar el inventario de una pequeña librería. Permite realizar operaciones CRUD básicas (Crear, Listar, Eliminar) y manejar el estado de las mismas, siguiendo los estándares de la arquitectura CSR (Controller-Service-Repository).
 
 ## 🚀 Requisitos del Caso
-* **Contexto:** Servicio para gestionar tareas diarias de un equipo de trabajo.
-* **Funcionalidades:** Crear, listar, marcar como completada y eliminar tareas.
+* **Contexto:** Servicio de administración de productos para una librería.
+* **Funcionalidades:** Agregar nuevos productos, listar el inventario completo y eliminar productos por su nombre.
 * **Validaciones:** Uso de anotaciones `@NotBlank` y `@NotNull`.
 * **Respuestas:** Manejo de errores y estados HTTP mediante `ResponseEntity`.
 
@@ -17,18 +17,17 @@ Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión 
 
 | Método | Endpoint | Descripción |
 | :--- | :--- | :--- |
-| **GET** | `/api/v1/tareas` | Obtiene la lista completa de tareas. 
-| **POST** | `/api/v1/tareas` | Agrega una nueva tarea al sistema. 
-| **PATCH** | `/api/v1/tareas/{id}` | Marca una tarea específica como completada. 
-| **DELETE** | `/api/v1/tareas/{id}` | Elimina una tarea por su ID. 
+| **GET** | `/api/v1/productos` | Obtiene la lista de todos los productos en stock. 
+| **POST** | `/api/v1/productos` | Registra un nuevo producto (Libro, cuaderno, etc). 
+| **DELETE** | `/api/v1/productos/{nombre}` | Elimina un producto específico buscando por su nombre.
 
-## 🧪 Ejemplo de Petición (JSON)
+## 🧪 Ejemplo de JSON para POST
 
-Para registrar una tarea mediante el método **POST**, el cuerpo de la solicitud debe seguir este formato:
+Para agregar un producto mediante el método **POST**, el cuerpo de la solicitud debe seguir este formato:
 
 ```json
 {
-  "id": 1,
-  "descripcion": "Hacer la cama",
-  "terminada": false
+  "nombre": "Cien años de soledad",
+  "precio": 15000,
+  "categoria": "Literatura"
 }
