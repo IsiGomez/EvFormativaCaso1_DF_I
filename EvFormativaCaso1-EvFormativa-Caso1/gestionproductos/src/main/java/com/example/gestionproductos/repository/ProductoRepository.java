@@ -16,7 +16,7 @@ public class ProductoRepository {
     }
 
     public void agregarProducto(Producto prod){
-        listaProductos.add(prod);;
+        listaProductos.add(prod);
     }
 
     public Boolean eliminarProducto(String nombre){
