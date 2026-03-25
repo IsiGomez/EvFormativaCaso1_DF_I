@@ -1,6 +1,6 @@
 # 📝 Sistema de Gestión de Tareas Pendientes (API REST)
 
-Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión de tareas diarias. Permite realizar operaciones CRUD básicas (Crear, Listar, Eliminar) y manejar el estado de las mismas, siguiendo los estándares de la arquitectura CSR.
+Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión de tareas diarias. Permite realizar operaciones CRUD básicas (Crear, Listar, Eliminar) y manejar el estado de las mismas, siguiendo los estándares de la arquitectura CSR (Controller-Service-Repository).
 
 ## 🚀 Requisitos del Caso
 * **Contexto:** Servicio para gestionar tareas diarias de un equipo de trabajo.
